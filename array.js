@@ -1,14 +1,4 @@
 export class ArrayFuntions {
-  /*
-    Name;
-    age;
-
-    constructor(name, age) {
-      this.name = name;
-      this.age = age;
-    }
-  */
-
   static arrayLength(a) {
     let count = 0;
     for (const _key of a) {
