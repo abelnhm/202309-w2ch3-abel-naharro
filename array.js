@@ -1,120 +1,131 @@
-export const arrayLength = (a) => {
-  let count = 0;
-  // eslint-disable-next-line no-unused-vars
-  for (const _key of a) {
-    count++;
-  }
+export class ArrayFuntions {
+  /*
+    Name;
+    age;
 
-  return count;
-};
-
-export const arrayPush = (a, b) => {
-  const arraySize = a.length;
-  a[arraySize] = b;
-  return a;
-};
-
-export const arrayPop = (a) => {
-  const arraySize = arrayLength(a);
-  const lastValue = arraySize - 1;
-
-  let count = 0;
-  const auxArray = [];
-
-  for (const valueItem of a) {
-    if (count !== lastValue) {
-      auxArray[count] = valueItem;
+    constructor(name, age) {
+      this.name = name;
+      this.age = age;
     }
+  */
 
-    count++;
-  }
-
-  return auxArray;
-};
-
-export const arrayShift = (a, b) => {
-  let count = 0;
-  const auxArray = [];
-
-  for (const valueItem of a) {
-    if (count === 0) {
-      auxArray[count] = b;
+  static arrayLength(a) {
+    let count = 0;
+    for (const _key of a) {
       count++;
     }
 
-    auxArray[count] = valueItem;
-    count++;
+    return count;
   }
 
-  return auxArray;
-};
+  static arrayPush = (a, b) => {
+    const arraySize = a.length;
+    a[arraySize] = b;
+    return a;
+  };
 
-export const arrayUnshift = (a) => {
-  let count = 0;
-  const auxArray = [];
+  static arrayPop = (a) => {
+    const arraySize = this.arrayLength(a);
+    const lastValue = arraySize - 1;
 
-  for (const valueItem of a) {
-    if (count !== 0) {
-      auxArray[count - 1] = valueItem;
+    let count = 0;
+    const auxArray = [];
+
+    for (const valueItem of a) {
+      if (count !== lastValue) {
+        auxArray[count] = valueItem;
+      }
+
+      count++;
     }
 
-    count++;
-  }
+    return auxArray;
+  };
 
-  return auxArray;
-};
+  static arrayShift = (a, b) => {
+    let count = 0;
+    const auxArray = [];
 
-export const arraySome = (a, b) => {
-  for (const valueItem of a) {
-    if (valueItem === b) return true;
-  }
+    for (const valueItem of a) {
+      if (count === 0) {
+        auxArray[count] = b;
+        count++;
+      }
 
-  return false;
-};
+      auxArray[count] = valueItem;
+      count++;
+    }
 
-export const arrayFind = (a, b) => {
-  for (const valueItem of a) {
-    if (valueItem === b) return valueItem;
-  }
+    return auxArray;
+  };
 
-  return 0;
-};
+  static arrayUnshift = (a) => {
+    let count = 0;
+    const auxArray = [];
 
-export const arrayInclude = (a, b) => {
-  for (const valueItem of a) {
-    if (valueItem === b) return true;
-  }
+    for (const valueItem of a) {
+      if (count !== 0) {
+        auxArray[count - 1] = valueItem;
+      }
 
-  return false;
-};
+      count++;
+    }
 
-export const arrayFindIndex = (a, b) => {
-  let count = 0;
+    return auxArray;
+  };
 
-  for (const valueItem of a) {
-    if (valueItem === b) return count;
-    count++;
-  }
+  static arraySome = (a, b) => {
+    for (const valueItem of a) {
+      if (valueItem === b) return true;
+    }
 
-  return -1;
-};
+    return false;
+  };
 
-export const arrayIndexOf = (a, b) => {
-  let count = 0;
+  static arrayFind = (a, b) => {
+    for (const valueItem of a) {
+      if (valueItem === b) return valueItem;
+    }
 
-  for (const valueItem of a) {
-    if (valueItem === b) return count;
-    count++;
-  }
+    return 0;
+  };
 
-  return -1;
-};
+  static arrayInclude = (a, b) => {
+    for (const valueItem of a) {
+      if (valueItem === b) return true;
+    }
 
-export const arrayJoin = (a) => {
-  let word = "";
-  for (const valueItem of a) {
-    word += valueItem;
-  }
+    return false;
+  };
 
-  return word;
-};
+  static arrayFindIndex = (a, b) => {
+    let count = 0;
+
+    for (const valueItem of a) {
+      if (valueItem === b) return count;
+      count++;
+    }
+
+    return -1;
+  };
+
+  static arrayIndexOf = (a, b) => {
+    let count = 0;
+
+    for (const valueItem of a) {
+      if (valueItem === b) return count;
+      count++;
+    }
+
+    return -1;
+  };
+
+  static arrayJoin = (a) => {
+    let word = "";
+    for (const valueItem of a) {
+      word += valueItem;
+    }
+
+    return word;
+  };
+}
