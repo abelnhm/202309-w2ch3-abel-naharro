@@ -73,6 +73,14 @@ describe("FIND TEST - List test arrays of find function", () => {
     const result = ArrayFuntions.arrayFind(list, valueSearch);
     expect(result).toBe(expectResult);
   });
+
+  test("With send array, result should not be to find element", () => {
+    const list = [1, 2, 3];
+    const valueSearch = 4;
+    const expectResult = 0;
+    const result = ArrayFuntions.arrayFind(list, valueSearch);
+    expect(result).toBe(expectResult);
+  });
 });
 
 describe("FIND TEST - List test arrays of find function", () => {
@@ -83,13 +91,10 @@ describe("FIND TEST - List test arrays of find function", () => {
     const result = ArrayFuntions.arrayInclude(list, valueSearch);
     expect(result).toBe(expectResult);
   });
-});
-
-describe("FIND TEST - List test arrays of find function", () => {
-  test("With send array, result should be to find element", () => {
+  test("With send array, result should not be to find element", () => {
     const list = [1, 2, 3];
-    const valueSearch = 2;
-    const expectResult = true;
+    const valueSearch = 5;
+    const expectResult = false;
     const result = ArrayFuntions.arrayInclude(list, valueSearch);
     expect(result).toBe(expectResult);
   });
@@ -103,6 +108,13 @@ describe("FINDINDEX TEST - List test arrays of findIndex function", () => {
     const result = ArrayFuntions.arrayFindIndex(list, valueSearch);
     expect(result).toBe(expectResult);
   });
+  test("With send array, result should not be to find index element", () => {
+    const list = [1, 2, 3];
+    const valueSearch = 5;
+    const expectResult = -1;
+    const result = ArrayFuntions.arrayFindIndex(list, valueSearch);
+    expect(result).toBe(expectResult);
+  });
 });
 
 describe("INDEXOF TEST - List test arrays of indexOF function", () => {
@@ -110,6 +122,13 @@ describe("INDEXOF TEST - List test arrays of indexOF function", () => {
     const list = [1, 2, 3];
     const valueSearch = 2;
     const expectResult = 1;
+    const result = ArrayFuntions.arrayIndexOf(list, valueSearch);
+    expect(result).toBe(expectResult);
+  });
+  test("With send array, result should not be to find index element", () => {
+    const list = [1, 2, 3];
+    const valueSearch = 6;
+    const expectResult = -1;
     const result = ArrayFuntions.arrayIndexOf(list, valueSearch);
     expect(result).toBe(expectResult);
   });
